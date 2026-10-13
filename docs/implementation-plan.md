@@ -22,9 +22,11 @@
 - Offline caching must cover all dynamic content and avoid deleting other apps' caches.
 
 ## Tasks
-- [ ] 1. Extract original lessons and 97 questions, correct content issues, validate structure. Files: scripts/extract-handbook.py, data/handbook.mjs.
-- [ ] 2. Write original advanced reading sets, vocabulary, and 28 day plan. File: data/reading.mjs. Shared question fields: id, chapter, part (5/6/7), stem, options (4 HTML strings), answer (0–3), explanation (HTML), passage (HTML or empty), passageTitle, setId. Reading set fields: id, part, title, description, minutes, passage, questions. Vocabulary fields: id, term, pos, meaning, example, translation, collocation.
-- [ ] 3. Test then implement learning state, answer recording, wrong-review schedule, import validation, session selection. Files: tests/engine.test.mjs, engine.mjs.
-- [ ] 4. Implement responsive app, complete study and practice flows, PWA and local preview. Files: index.html, styles.css, app.mjs, sw.js, manifest.webmanifest, icons/*, scripts/serve.mjs.
-- [ ] 5. Review content and behavior, run meaningful tests and browser checks, fix findings. Document validation in README.md.
-- [ ] 6. Create dedicated repository, commit/push app, enable GitHub Pages, verify public deployment and deliver URL.
+- [x] 1. Extract original lessons and 97 questions, correct content issues, validate structure. Files: scripts/extract-handbook.py, data/handbook.mjs.
+- [x] 2. Write original advanced reading sets, vocabulary, and 28 day plan. File: data/reading.mjs. Shared question fields: id, chapter, part (5/6/7), stem, options (4 HTML strings), answer (0–3), explanation (HTML), passage (HTML or empty), passageTitle, setId. Reading set fields: id, part, title, description, minutes, passage, questions. Vocabulary fields: id, term, pos, meaning, example, translation, collocation.
+- [x] 3. Test then implement learning state, answer recording, wrong-review schedule, import validation, session selection. Files: tests/engine.test.mjs, engine.mjs.
+- [x] 4. Implement responsive app, complete study and practice flows, PWA and local preview. Files: index.html, styles.css, app.mjs, sw.js, manifest.webmanifest, icons/*, scripts/serve.mjs.
+- [x] 5. Review content and behavior, run meaningful tests and browser checks, fix findings. Document validation in README.md.
+- [x] 6. Create dedicated repository, commit/push app, enable GitHub Pages, verify public deployment and deliver URL.
+
+Verified GitHub Pages deployment: https://eddychang0630.github.io/toeic-reading-lab/ . See validation.md for checks and limitations.

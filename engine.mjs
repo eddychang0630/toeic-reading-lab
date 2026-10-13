@@ -117,7 +117,7 @@ const isQuestion = question => isObject(question) && isId(question.id) && isId(q
 const safeTime = now => integer(now, Date.now(), 0, MAX_TIME);
 const percentage = (correct, answered) => answered ? Math.round(correct * 100 / answered) : 0;
 const isWrong = (record, question) => Boolean(record && record.lastChoice !== question.answer);
-const isDue = (record, question, now) => Boolean(record && ((!record.firstCorrect && record.dueAt <= now) || isWrong(record, question)));
+const isDue = (record, question, now) => Boolean(record && (((!record.firstCorrect || record.correctStreak < record.attempts) && record.dueAt <= now) || isWrong(record, question)));
 
 function questionBank(questions) {
   const seen = new Set();

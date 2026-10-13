@@ -293,6 +293,22 @@ test('wrong mode uses the latest answer while review mode includes corrected mis
   assert.deepEqual(new Set(engine.selectPractice(bank, state, { mode: 'review', now: NOW + DAY }).map(q => q.id)), new Set(['a', 'b', 'd']));
 });
 
+test('a later mistake enters spaced review after correction while first-attempt accuracy stays intact', () => {
+  const bank = [question('later-mistake'), question('always-correct')];
+  let state = engine.recordAnswer(engine.blankState(), bank[0], 1, NOW - 1000);
+  state = engine.recordAnswer(state, bank[0], 0, NOW - 500);
+  state = engine.recordAnswer(state, bank[0], 1, NOW);
+  state = engine.recordAnswer(state, bank[1], 1, NOW);
+  assert.equal(state.records['later-mistake'].dueAt, NOW + DAY);
+  assert.equal(engine.summarize(state, bank, NOW).accuracy, 100);
+  assert.equal(engine.summarize(state, bank, NOW).firstCorrect, 2);
+  assert.equal(engine.summarize(state, bank, NOW).wrong, 0);
+  assert.equal(engine.summarize(state, bank, NOW).due, 0);
+  assert.deepEqual(engine.selectPractice(bank, state, { mode: 'review', now: NOW }), []);
+  assert.equal(engine.summarize(state, bank, NOW + DAY).due, 1);
+  assert.deepEqual(engine.selectPractice(bank, state, { mode: 'review', now: NOW + DAY }).map(q => q.id), ['later-mistake']);
+});
+
 test('bookmarked practice selects exact saved IDs and ignores removed bookmarks', () => {
   assert.equal(typeof engine.selectPractice, 'function');
   const bank = [question('a'), question('b'), question('c')];

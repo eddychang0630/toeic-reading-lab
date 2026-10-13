@@ -1,0 +1,1 @@
+{"name":"readlab-toeic","version":"1.0.0","private":true,"type":"module","description":"Mobile-first TOEIC reading study PWA","scripts":{"start":"node scripts/serve.mjs","test":"node --test","verify":"node scripts/validate.mjs"}}

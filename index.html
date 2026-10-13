@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#153f3c">
+  <meta name="description" content="ReadLab 多益閱讀練習室。完整文法講義、Part 5–7 練習、錯題複習與商務詞彙，陪你每天向 850+ 前進。">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="ReadLab">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./icons/icon-192.png">
+  <link rel="stylesheet" href="./styles.css">
+  <title>ReadLab｜多益閱讀練習室</title>
+</head>
+<body>
+  <a class="skip-link" href="#main">跳至內容</a>
+  <aside class="sidebar" aria-label="主要導覽">
+    <a class="brand" href="#home"><span class="brand-icon">r<span>.</span></span><span>ReadLab<small>多益閱讀練習室</small></span></a>
+    <div class="nav-caption">YOUR LEARNING SPACE</div>
+    <nav id="desktop-nav"></nav>
+    <div class="side-note"><span class="tiny-label">A LITTLE, EVERY DAY.</span><p>每天讀一點，<br>離目標更近一點。</p><span class="side-goal">向 850+ 前進 ↗</span></div>
+    <a class="side-settings" href="#settings">偏好設定與備份 <span>↗</span></a>
+  </aside>
+  <div class="app-shell">
+    <header class="topbar"><a class="mobile-brand" href="#home">ReadLab<span>.</span></a><div class="breadcrumb">MY READING JOURNEY <span>/</span> <b id="page-label">今日學習</b></div><div class="header-actions"><span class="connection" id="connection" aria-live="polite"><i></i> 線上</span><button id="theme-toggle" class="icon-button" aria-label="切換深色模式"></button><a class="icon-button" href="#settings" aria-label="開啟設定" id="settings-icon"></a></div></header>
+    <main id="main" tabindex="-1"><div class="loading"><span class="brand-icon">r.</span><p>準備你的閱讀練習室…</p></div></main>
+    <footer class="app-footer"><span>Read a little. Grow a lot.</span><span>ReadLab · 每天向前一點</span></footer>
+  </div>
+  <nav class="bottom-nav" id="mobile-nav" aria-label="行動導覽"></nav>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <dialog id="dialog"><div id="dialog-body"></div><button class="button secondary dialog-close">關閉</button></dialog>
+  <input type="file" id="import-file" accept="application/json,.json" hidden>
+  <noscript>請啟用 JavaScript 以使用練習與進度紀錄。你也可以直接開啟原始講義。</noscript>
+  <script type="module" src="./app.mjs"></script>
+</body>
+</html>
